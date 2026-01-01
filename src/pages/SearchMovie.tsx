@@ -46,10 +46,10 @@ export default function SearchAboutMovies()
                     return( 
                          <MovieCard 
                            key={index} 
-                           id={item.imdbID}
-                           title={item.Title} 
-                           image={item.Poster}
-                           history={item.Year}
+                           imdbID={item.imdbID}
+                           Title={item.Title} 
+                           Poster={item.Poster}
+                           Year={item.Year}
                          />
                       ) 
                   })

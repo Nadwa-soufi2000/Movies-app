@@ -11,6 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<WatchList/>}></Route>
+        <Route path="/watchList" element={<WatchList/>}></Route>
         <Route path="/watched" element={<WatchedMovies/>}></Route>
         <Route path="/search" element={<SearchAboutMovies/>}></Route>
       </Routes>
