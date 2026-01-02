@@ -8,14 +8,20 @@ import
       CardFooter, 
       CardDescription
      } from "./ui/card";
+import 
+     {
+       Dialog ,
+       DialogContent
+     } from "./ui/dialog"   
 import { Button } from "./ui/button";
 import { useMovieContext } from "./context/GlobalContext";
 import { ADD_MOVIE_TO_WATCHED, ADD_MOVIE_TO_WATCHLIST } from "./context/Actions";
 import { useState } from "react";
+import {CheckCircle} from 'lucide-react'
 
 export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject) 
 {
-   const {MovieAction} = useMovieContext();
+   const { MovieAction } = useMovieContext();
    const[add , setAdd] = useState("")
 
    const AddToWatched = () =>
@@ -39,6 +45,7 @@ export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject
    }
 
     return(
+      <>
         <Card id={imdbID} className="w-70 hover:scale-[1.08] duration-500 shadow-xl">
           <CardHeader>
             <CardTitle>{Title}</CardTitle>
@@ -52,5 +59,13 @@ export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject
              <Button onClick={AddToWatchList} disabled={ add === "watchlist"} variant="default" className="bg-[#21d07a] text-[10px] text-white font-semibold">Add To WatchList</Button>
           </CardFooter>
        </Card>
+
+       <Dialog open={add} onOpenChange={setAdd}>
+          <DialogContent className="flex flex-col justify-center items-center gap-4">  
+               <CheckCircle className="text-[#21d07a] text-32"/>
+               <p className="text-[#032541] font-semibold">Your Changes has added successfully</p>
+          </DialogContent>
+        </Dialog>
+       </>
     )
 }
