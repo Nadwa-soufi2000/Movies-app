@@ -6,14 +6,17 @@ import { Card,
          CardHeader, 
          CardTitle
          } from "@/components/ui/card"
-import { Eye, X } from "lucide-react"
+import { EyeOff, X } from "lucide-react"
 
 export default function WatchList() 
 {
     const { WatchList } = useMovieContext()
 
     return(
-        <div className="flex flex-wrap items-center justify-center gap-8 w-[80%] my-6 mx-auto">
+      <> 
+      {
+         WatchList.length > 0 ? 
+          <div className="flex flex-wrap items-center justify-center gap-8 w-[80%] my-6 mx-auto">
             {
                WatchList.map((item , index) => {
                   return(
@@ -27,12 +30,19 @@ export default function WatchList()
                        </CardContent>
                         <CardFooter className="flex justify-center gap-3">
                             <X className="w-8 h-8 text-[#21d07a]" />
-                            <Eye className="w-8 h-8 text-[#21d07a]" />
+                            <EyeOff className="w-8 h-8 text-[#21d07a]" />
                        </CardFooter>
                     </Card>
                   )
                })
             }
         </div>
+        :
+        <div className="flex flex-col justify-center items-center gap-4">
+           <img src="/search.png" className="w-125 h-125"/>
+           <p className="text-gray-500 font-bold text-[55px]">Add Movies To WatchList</p>
+        </div>
+      }
+     </>
     )
 }

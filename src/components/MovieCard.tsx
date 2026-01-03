@@ -22,7 +22,8 @@ import {CheckCircle} from 'lucide-react'
 export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject) 
 {
    const { MovieAction } = useMovieContext();
-   const[add , setAdd] = useState("")
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   const[add , setAdd] = useState<any>("")
 
    const AddToWatched = () =>
    {
@@ -63,7 +64,7 @@ export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject
        <Dialog open={add} onOpenChange={setAdd}>
           <DialogContent className="flex flex-col justify-center items-center gap-4">  
                <CheckCircle className="text-[#21d07a] text-32"/>
-               <p className="text-[#032541] font-semibold">Your Changes has added successfully</p>
+               <p className="text-[#032541] font-semibold"> has added successfully</p>
           </DialogContent>
         </Dialog>
        </>

@@ -8,11 +8,12 @@ import { Card,
         } from "@/components/ui/card"
 import { Eye, X } from "lucide-react"
 import {MOVE_TO_WATCHLIST , REMOVE_MOVIE_FROM_WATCHED} from '@/components/context/Actions'
+import type { MovieObject } from "@/types/types-data"
 export default function WatchedMovies() 
 {
     const { Watched , MovieAction } = useMovieContext()
     
-    const MoveToWatchList = (movie) =>
+    const MoveToWatchList = (movie : MovieObject) =>
     {
        MovieAction({
          type: MOVE_TO_WATCHLIST,
@@ -20,7 +21,7 @@ export default function WatchedMovies()
        })
     }
 
-    const RemoveFromWatched = (movie) =>
+    const RemoveFromWatched = (movie : MovieObject) =>
     {
          MovieAction({
            type: REMOVE_MOVIE_FROM_WATCHED,
