@@ -64,7 +64,7 @@ export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject
        <Dialog open={add} onOpenChange={setAdd}>
           <DialogContent className="flex flex-col justify-center items-center gap-4">  
                <CheckCircle className="text-[#21d07a] text-32"/>
-               <p className="text-[#032541] font-semibold"> has added successfully</p>
+               <p className="text-[#032541] font-semibold">{Title} has added successfully To {add}</p>
           </DialogContent>
         </Dialog>
        </>

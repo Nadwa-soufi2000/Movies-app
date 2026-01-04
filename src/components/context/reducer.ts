@@ -24,6 +24,7 @@ export const reducer  = (state : State , action : actionType) =>
             return{
                  ...state,
                  Watched : state.Watched.filter((movie: MovieObject) => movie.imdbID != action.payload.imdbID),
+                 WatchList: state.WatchList.filter((movie: MovieObject) => movie.imdbID != action.payload.imdbID)
             }
         case actions.MOVE_TO_WATCHLIST:
             return{

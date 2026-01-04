@@ -1,3 +1,4 @@
+import { ADD_MOVIE_TO_WATCHED, REMOVE_MOVIE_FROM_WATCHLIST } from "@/components/context/Actions";
 import { useMovieContext } from "@/components/context/GlobalContext"
 import { Card, 
          CardContent, 
@@ -6,11 +7,28 @@ import { Card,
          CardHeader, 
          CardTitle
          } from "@/components/ui/card"
+import type { MovieObject } from "@/types/types-data";
 import { EyeOff, X } from "lucide-react"
 
 export default function WatchList() 
 {
-    const { WatchList } = useMovieContext()
+    const { WatchList , MovieAction } = useMovieContext();
+
+    const RemoveFromWatchList = (movie : MovieObject) =>
+    {
+       MovieAction({
+         type: REMOVE_MOVIE_FROM_WATCHLIST,
+         payload: movie
+       })
+    }
+
+    const AddToWatched = (movie : MovieObject) => 
+    {
+       MovieAction({
+         type: ADD_MOVIE_TO_WATCHED,
+         payload: movie
+       })
+    }
 
     return(
       <> 
@@ -29,8 +47,8 @@ export default function WatchList()
                           <img src={item.Poster} alt="image" className="w-full h-70" />
                        </CardContent>
                         <CardFooter className="flex justify-center gap-3">
-                            <X className="w-8 h-8 text-[#21d07a]" />
-                            <EyeOff className="w-8 h-8 text-[#21d07a]" />
+                            <X onClick={() => RemoveFromWatchList(item)} className="w-8 h-8 text-[#21d07a]" />
+                            <EyeOff onClick={() => AddToWatched(item)} className="w-8 h-8 text-[#21d07a]" />
                        </CardFooter>
                     </Card>
                   )
