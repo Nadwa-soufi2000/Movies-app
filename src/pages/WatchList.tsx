@@ -8,7 +8,7 @@ import { Card,
          CardTitle
          } from "@/components/ui/card"
 import type { MovieObject } from "@/types/types-data";
-import { EyeOff, X } from "lucide-react"
+import { Eye, X } from "lucide-react"
 
 export default function WatchList() 
 {
@@ -47,8 +47,8 @@ export default function WatchList()
                           <img src={item.Poster} alt="image" className="w-full h-70" />
                        </CardContent>
                         <CardFooter className="flex justify-center gap-3">
-                            <X onClick={() => RemoveFromWatchList(item)} className="w-8 h-8 text-[#21d07a]" />
-                            <EyeOff onClick={() => AddToWatched(item)} className="w-8 h-8 text-[#21d07a]" />
+                            <X onClick={() => RemoveFromWatchList(item)} className="w-8 h-8 text-[#21d07a] hover:text-[#095832]" />
+                            <Eye onClick={() => AddToWatched(item)} className="w-8 h-8 text-[#21d07a] hover:text-[#095832]" />
                        </CardFooter>
                     </Card>
                   )

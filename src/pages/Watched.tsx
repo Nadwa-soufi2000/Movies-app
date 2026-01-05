@@ -6,7 +6,7 @@ import { Card,
          CardHeader, 
          CardTitle 
         } from "@/components/ui/card"
-import { Eye, X } from "lucide-react"
+import { EyeOff, X } from "lucide-react"
 import {MOVE_TO_WATCHLIST , REMOVE_MOVIE_FROM_WATCHED} from '@/components/context/Actions'
 import type { MovieObject } from "@/types/types-data"
 export default function WatchedMovies() 
@@ -46,8 +46,8 @@ export default function WatchedMovies()
                         <img src={item.Poster} alt="image" className="w-full h-70" />
                      </CardContent>
                      <CardFooter className="flex justify-center gap-3">
-                           <X onClick={() => MoveToWatchList(item)} className="w-8 h-8 text-[#21d07a]" />
-                           <Eye onClick={() => RemoveFromWatched(item)} className="w-8 h-8 text-[#21d07a]" />
+                           <X onClick={() => RemoveFromWatched(item)} className="w-8 h-8 text-[#21d07a] hover:text-[#095832]" />
+                           <EyeOff onClick={() => MoveToWatchList(item)} className="w-8 h-8 text-[#21d07a] hover:text-[#095832]" />
                      </CardFooter>
                   </Card>
                   )
