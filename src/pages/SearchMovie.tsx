@@ -24,13 +24,13 @@ export default function SearchAboutMovies()
 
     return(
        <div className="w-full">
-        <div className="flex w-xl flex-col gap-7 my-10 mx-auto ">
-            <h1 className="text-[#032541] text-center font-bold text-[40px]">Search About Movies</h1>
-            <div className="flex bg-[#032541] rounded-[10px] pl-3 justify-start h-15 items-center gap-2 shadow-xl w-full outline-none">
+        <div className="flex sm:w-xl w-66 flex-col gap-7 my-10 mx-auto ">
+            <h1 className="text-[#032541] text-center font-bold text-[17px] sm:text-[24px] md:text-[40px]">Search About Movies</h1>
+            <div className="flex bg-[#032541] rounded-[10px] pl-3 justify-start sm:h-15 h-10 items-center gap-2 shadow-xl w-full outline-none">
                 <Search className="text-[20px] text-gray-400"/>
                 <input 
                   type="text" 
-                  className="text-gray-400 text-[20px] font-medium outline-none w-[70%] h-full bg-[#032541]" 
+                  className="text-gray-400 sm:text-[20px] text-[16px] font-medium outline-none w-[70%] h-full bg-[#032541]" 
                   placeholder="Search About Movies..."
                   value={movie}
                   onChange={(e) => setMovie(e.target.value)}

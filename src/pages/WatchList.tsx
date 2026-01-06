@@ -57,8 +57,8 @@ export default function WatchList()
         </div>
         :
         <div className="flex flex-col justify-center items-center gap-4">
-           <img src="/search.png" className="w-125 h-125"/>
-           <p className="text-gray-500 font-bold text-[55px]">Add Movies To WatchList</p>
+           <img src="/search.png" className="md:w-125 md:h-125 sm:w-90 sm:h-90 w-60 h-60"/>
+           <p className="text-gray-500 font-bold md:text-[55px] sm:text-[24px] text-[19px]">Add Movies To WatchList</p>
         </div>
       }
      </>

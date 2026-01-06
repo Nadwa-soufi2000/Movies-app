@@ -47,7 +47,7 @@ export default function MovieCard({imdbID , Title , Poster , Year} : MovieObject
 
     return(
       <>
-        <Card id={imdbID} className="w-70 hover:scale-[1.08] duration-500 shadow-xl">
+        <Card id={imdbID} className="sm:w-70 w-66 hover:scale-[1.08] duration-500 shadow-xl">
           <CardHeader>
             <CardTitle>{Title}</CardTitle>
             <CardDescription>{Year}</CardDescription>
